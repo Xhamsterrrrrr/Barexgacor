@@ -5,6 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BAREX BACOR</title>
   <style>
+    @keyframes glow {
+  0% { text-shadow: 0 0 5px #00ffff; }
+  50% { text-shadow: 0 0 20px #ffff00; }
+  100% { text-shadow: 0 0 5px #00ffff; }
+}
+
+.barex-logo {
+  animation: glow 2s infinite ease-in-out;
+}
+
+    .barex-logo {
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+  background: linear-gradient(to right, #00ffff, #00ff88, #ffff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.3);
+  letter-spacing: 2px;
+  margin: 2rem 0 1rem;
+}
+
     body {
       margin: 0;
       font-family: sans-serif;
@@ -96,16 +118,17 @@
 <body>
 
   <header>
-    <h2 style="font-size: 2rem; font-weight: bold;">BAREX BACOR</h2>
-    <div class="login-form">
-      <input type="text" placeholder="Username">
-      <input type="password" placeholder="Password">
-      <button style="background-color: #2563EB; color: white;">Login</button>
-      <a href="register.html">
-        <button style="background-color: #10B981; color: white;">Daftar</button>
-      </a>
-    </div>
-  </header>
+  <h1 class="barex-logo">BAREX BACOR</h1>
+  <div class="login-form">
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button style="background-color: #2563EB; color: white;">Login</button>
+    <a href="register.html">
+      <button style="background-color: #10B981; color: white;">Daftar</button>
+    </a>
+  </div>
+</header>
+
 
   <!-- PROMO GAMBAR -->
   <img src="games-promo.png" alt="Games Promo" class="promo-image" />
