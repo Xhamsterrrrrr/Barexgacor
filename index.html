@@ -8,10 +8,26 @@
     body {
       margin: 0;
       font-family: sans-serif;
-      background-color: #3B82F6; /* Biru terang */
+      background-color: #3B82F6; /* Warna biru terang */
       color: white;
+      background-image: url('kakeszeus.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       position: relative;
-      overflow-x: hidden;
+    }
+
+    /* Biru overlay agar teks tetap terbaca */
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(59, 130, 246, 0.7);
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
     }
 
     .background-text {
@@ -23,7 +39,7 @@
       font-weight: 900;
       color: rgba(255, 255, 255, 0.05);
       white-space: nowrap;
-      z-index: 0;
+      z-index: 1;
       user-select: none;
     }
 
@@ -32,8 +48,6 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem;
-      position: relative;
-      z-index: 1;
     }
 
     .login-form input {
@@ -58,8 +72,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1rem;
-      position: relative;
-      z-index: 1;
     }
 
     .card {
@@ -85,42 +97,28 @@
   </style>
 </head>
 <body>
-  <div class="background-text">BAREX GACOR</div>
+  <div class="overlay"></div>
 
-  <header>
-    <h2 style="font-size: 2rem; font-weight: bold;">BAREX BACOR</h2>
-    <div class="login-form">
-      <input type="text" placeholder="Username">
-      <input type="password" placeholder="Password">
-      <button>Login</button>
-    </div>
-  </header>
+  <div class="content">
+    <div class="background-text">BAREX GACOR</div>
 
-  <main>
-    <div class="card">
-      <h3>Zeus</h3>
-      <p>Klik untuk bermain Zeus sekarang!</p>
-    </div>
-    <div class="card">
-      <h3>Candy Crush</h3>
-      <p>Klik untuk bermain Candy Crush sekarang!</p>
-    </div>
-    <div class="card">
-      <h3>Panda Fortune</h3>
-      <p>Klik untuk bermain Panda Fortune sekarang!</p>
-    </div>
-    <div class="card">
-      <h3>Dragon Gold</h3>
-      <p>Klik untuk bermain Dragon Gold sekarang!</p>
-    </div>
-    <div class="card">
-      <h3>Lucky Spin</h3>
-      <p>Klik untuk bermain Lucky Spin sekarang!</p>
-    </div>
-    <div class="card">
-      <h3>Wild Safari</h3>
-      <p>Klik untuk bermain Wild Safari sekarang!</p>
-    </div>
-  </main>
+    <header>
+      <h2 style="font-size: 2rem; font-weight: bold;">BAREX BACOR</h2>
+      <div class="login-form">
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button>Login</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="card"><h3>Zeus</h3><p>Klik untuk bermain Zeus sekarang!</p></div>
+      <div class="card"><h3>Candy Crush</h3><p>Klik untuk bermain Candy Crush sekarang!</p></div>
+      <div class="card"><h3>Panda Fortune</h3><p>Klik untuk bermain Panda Fortune sekarang!</p></div>
+      <div class="card"><h3>Dragon Gold</h3><p>Klik untuk bermain Dragon Gold sekarang!</p></div>
+      <div class="card"><h3>Lucky Spin</h3><p>Klik untuk bermain Lucky Spin sekarang!</p></div>
+      <div class="card"><h3>Wild Safari</h3><p>Klik untuk bermain Wild Safari sekarang!</p></div>
+    </main>
+  </div>
 </body>
 </html>
