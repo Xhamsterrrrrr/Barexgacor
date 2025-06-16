@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,39 +8,9 @@
     body {
       margin: 0;
       font-family: sans-serif;
-      background-color: #3B82F6;
+      background-color: #0ea5e9;
       color: white;
-      background-image: url('kakeszeus.png');
-      background-size: 50%;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
       overflow-x: hidden;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(59, 130, 246, 0.7);
-      z-index: 0;
-    }
-
-    .content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .background-text {
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 8rem;
-      font-weight: 900;
-      color: rgba(255, 255, 255, 0.05);
-      white-space: nowrap;
-      z-index: 1;
-      user-select: none;
     }
 
     header {
@@ -48,6 +18,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem;
+      background-color: rgba(0, 0, 0, 0.2);
       flex-wrap: wrap;
     }
 
@@ -67,47 +38,31 @@
       cursor: pointer;
     }
 
-    main {
-      padding: 1rem 1.5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-
-    .card {
-      background-color: #60A5FA;
-      padding: 1.5rem;
+    .promo-image {
+      max-width: 100%;
+      display: block;
+      margin: 2rem auto;
       border-radius: 1rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    .deposit {
       text-align: center;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.2);
     }
 
-    .card:hover {
-      background-color: #93C5FD;
-      transform: scale(1.03);
-    }
-
-    .card a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .deposit-methods {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .deposit-methods img {
-      height: 60px;
-      margin: 0.5rem 1rem;
+    .deposit img {
+      height: 50px;
+      margin: 1rem;
+      vertical-align: middle;
     }
 
     footer {
       text-align: center;
-      padding: 2rem 1rem;
-      background-color: #1E3A8A;
-      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #1e3a8a;
+      font-size: 0.9rem;
     }
 
     .whatsapp-button {
@@ -128,73 +83,51 @@
     }
 
     @media (max-width: 600px) {
-      .background-text {
-        font-size: 3rem;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
-
       .login-form {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <audio autoplay muted loop>
-    <source src="music.mp3" type="audio/mp3" />
-  </audio>
 
-  <div class="overlay"></div>
+  <header>
+    <h2 style="font-size: 2rem; font-weight: bold;">BAREX BACOR</h2>
+    <div class="login-form">
+      <input type="text" placeholder="Username">
+      <input type="password" placeholder="Password">
+      <button style="background-color: #2563EB; color: white;">Login</button>
+      <a href="register.html">
+        <button style="background-color: #10B981; color: white;">Daftar</button>
+      </a>
+    </div>
+  </header>
 
-  <div class="content">
-    <div class="background-text">BAREX GACOR</div>
+  <!-- PROMO GAMBAR -->
+  <img src="games-promo.png" alt="Games Promo" class="promo-image" />
 
-    <header>
-      <h2 style="font-size: 2rem; font-weight: bold;">BAREX BACOR</h2>
-      <div class="login-form">
-        <input type="text" placeholder="Username">
-        <input type="password" placeholder="Password">
-        <button style="background-color: #2563EB; color: white;">Login</button>
-        <a href="register.html">
-          <button style="background-color: #10B981; color: white;">Daftar</button>
-        </a>
-      </div>
-    </header>
-
-    <main>
-      <div class="card"><a href="game.html?game=zeus"><h3>Zeus</h3><p>Mainkan Zeus sekarang!</p></a></div>
-      <div class="card"><a href="game.html?game=candy"><h3>Candy Crush</h3><p>Mainkan Candy sekarang!</p></a></div>
-      <div class="card"><a href="game.html?game=panda"><h3>Panda Fortune</h3><p>Keberuntungan menanti!</p></a></div>
-      <div class="card"><a href="game.html?game=dragon"><h3>Dragon Gold</h3><p>Emas naga menunggu!</p></a></div>
-      <div class="card"><a href="game.html?game=spin"><h3>Lucky Spin</h3><p>Putar dan menang!</p></a></div>
-      <div class="card"><a href="game.html?game=safari"><h3>Wild Safari</h3><p>Jelajahi hutan liar!</p></a></div>
-    </main>
-
-    <!-- Deposit VIA -->
-    <section class="deposit-methods">
-      <h2>Deposit VIA</h2>
-      <div>
-        <img src="DANA.jpeg" alt="DANA" />
-        <img src="mandiri.png" alt="Mandiri" />
-        <img src="BCA.jpeg" alt="BCA" />
-        <img src="qris.png" alt="QRIS" />
-      </div>
-    </section>
-
-    <footer>
-      <p>© 2025 BAREX BACOR. All Rights Reserved.</p>
-      <p>Hubungi kami di: <a href="mailto:support@barexbacor.com" style="color: #93C5FD;">support@barexbacor.com</a></p>
-    </footer>
+  <!-- DEPOSIT VIA -->
+  <div class="deposit">
+    <h2>Deposit VIA</h2>
+    <img src="DANA.jpeg" alt="DANA">
+    <img src="mandiri.png" alt="Mandiri">
+    <img src="BCA.jpeg" alt="BCA">
+    <img src="qris.png" alt="QRIS">
   </div>
 
-  <!-- WhatsApp Live Chat -->
+  <footer>
+    <p>© 2025 BAREX BACOR - Semua Hak Dilindungi</p>
+    <p>Support: support@barexbacor.com</p>
+  </footer>
+
+  <!-- WHATSAPP -->
   <div class="whatsapp-button">
     <a href="https://wa.me/6281234567890" target="_blank">💬 Live Chat</a>
   </div>
+
 </body>
 </html>
