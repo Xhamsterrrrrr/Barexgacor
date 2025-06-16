@@ -1,43 +1,126 @@
-import React from "react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAREX BACOR</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #3B82F6; /* Biru terang */
+      color: white;
+      position: relative;
+      overflow-x: hidden;
+    }
 
-export default function BarexBacor() {
-  return (
-    <div className="relative min-h-screen bg-blue-900 text-white font-sans overflow-hidden">
-      {/* Background Text */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <h1 className="text-[10rem] font-extrabold text-white/5 select-none">BAREX GACOE</h1>
-      </div>
+    .background-text {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 8rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.05);
+      white-space: nowrap;
+      z-index: 0;
+      user-select: none;
+    }
 
-      {/* Header */}
-      <header className="relative z-10 flex justify-between items-center p-6">
-        <h2 className="text-3xl font-bold">BAREX BACOR</h2>
-        <div className="flex items-center space-x-2">
-          <Input placeholder="Username" className="bg-white text-black" />
-          <Input placeholder="Password" type="password" className="bg-white text-black" />
-          <Button>Login</Button>
-        </div>
-      </header>
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
 
-      {/* Game Section */}
-      <main className="relative z-10 p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <GameCard title="Zeus" />
-        <GameCard title="Candy Crush" />
-        <GameCard title="Panda Fortune" />
-        <GameCard title="Dragon Gold" />
-        <GameCard title="Lucky Spin" />
-        <GameCard title="Wild Safari" />
-      </main>
+    .login-form input {
+      padding: 0.5rem;
+      margin-right: 0.5rem;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .login-form button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #2563EB;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 1rem 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card {
+      background-color: #60A5FA;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    .card:hover {
+      background-color: #93C5FD;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-text">BAREX GACOR</div>
+
+  <header>
+    <h2 style="font-size: 2rem; font-weight: bold;">BAREX BACOR</h2>
+    <div class="login-form">
+      <input type="text" placeholder="Username">
+      <input type="password" placeholder="Password">
+      <button>Login</button>
     </div>
-  );
-}
+  </header>
 
-function GameCard({ title }: { title: string }) {
-  return (
-    <div className="bg-blue-700 p-6 rounded-2xl shadow-lg hover:bg-blue-600 transition-all">
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-sm">Klik untuk bermain {title} sekarang!</p>
+  <main>
+    <div class="card">
+      <h3>Zeus</h3>
+      <p>Klik untuk bermain Zeus sekarang!</p>
     </div>
-  );
-}
+    <div class="card">
+      <h3>Candy Crush</h3>
+      <p>Klik untuk bermain Candy Crush sekarang!</p>
+    </div>
+    <div class="card">
+      <h3>Panda Fortune</h3>
+      <p>Klik untuk bermain Panda Fortune sekarang!</p>
+    </div>
+    <div class="card">
+      <h3>Dragon Gold</h3>
+      <p>Klik untuk bermain Dragon Gold sekarang!</p>
+    </div>
+    <div class="card">
+      <h3>Lucky Spin</h3>
+      <p>Klik untuk bermain Lucky Spin sekarang!</p>
+    </div>
+    <div class="card">
+      <h3>Wild Safari</h3>
+      <p>Klik untuk bermain Wild Safari sekarang!</p>
+    </div>
+  </main>
+</body>
+</html>
