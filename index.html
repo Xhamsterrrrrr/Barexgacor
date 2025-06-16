@@ -8,16 +8,16 @@
     body {
       margin: 0;
       font-family: sans-serif;
-      background-color: #3B82F6; /* Warna biru terang */
+      background-color: #3B82F6;
       color: white;
       background-image: url('kakeszeus.png');
       background-size: 50%;
       background-position: center;
       background-repeat: no-repeat;
       position: relative;
+      overflow-x: hidden;
     }
 
-    /* Biru overlay agar teks tetap terbaca */
     .overlay {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -48,6 +48,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem;
+      flex-wrap: wrap;
     }
 
     .login-form input {
@@ -59,11 +60,10 @@
 
     .login-form button {
       padding: 0.5rem 1rem;
+      margin-right: 0.5rem;
       border: none;
-      background-color: #2563EB;
-      color: white;
-      font-weight: bold;
       border-radius: 5px;
+      font-weight: bold;
       cursor: pointer;
     }
 
@@ -79,24 +79,76 @@
       padding: 1.5rem;
       border-radius: 1rem;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.2s;
+      text-align: center;
     }
 
     .card:hover {
       background-color: #93C5FD;
+      transform: scale(1.03);
     }
 
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
+    .card a {
+      color: white;
+      text-decoration: none;
     }
 
-    .card p {
-      margin: 0;
+    .deposit-methods {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .deposit-methods img {
+      height: 60px;
+      margin: 0.5rem 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #1E3A8A;
+      margin-top: 2rem;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 10;
+    }
+
+    .whatsapp-button a {
+      background-color: #25D366;
+      padding: 12px 16px;
+      border-radius: 50px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 600px) {
+      .background-text {
+        font-size: 3rem;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .login-form {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
+  <audio autoplay muted loop>
+    <source src="music.mp3" type="audio/mp3" />
+  </audio>
+
   <div class="overlay"></div>
 
   <div class="content">
@@ -105,42 +157,44 @@
     <header>
       <h2 style="font-size: 2rem; font-weight: bold;">BAREX BACOR</h2>
       <div class="login-form">
-  <input type="text" placeholder="Username">
-  <input type="password" placeholder="Password">
-  <button style="margin-right: 0.5rem; background-color: #2563EB; color: white; font-weight: bold; padding: 0.5rem 1rem; border: none; border-radius: 5px; cursor: pointer;">Login</button>
-  <button style="background-color: #10B981; color: white; font-weight: bold; padding: 0.5rem 1rem; border: none; border-radius: 5px; cursor: pointer;">Daftar</button>
-</div>
-
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button style="background-color: #2563EB; color: white;">Login</button>
+        <a href="register.html">
+          <button style="background-color: #10B981; color: white;">Daftar</button>
+        </a>
+      </div>
     </header>
 
     <main>
-      <div class="card"><h3>Zeus</h3><p>Klik untuk bermain Zeus sekarang!</p></div>
-      <div class="card"><h3>Candy Crush</h3><p>Klik untuk bermain Candy Crush sekarang!</p></div>
-      <div class="card"><h3>Panda Fortune</h3><p>Klik untuk bermain Panda Fortune sekarang!</p></div>
-      <div class="card"><h3>Dragon Gold</h3><p>Klik untuk bermain Dragon Gold sekarang!</p></div>
-      <div class="card"><h3>Lucky Spin</h3><p>Klik untuk bermain Lucky Spin sekarang!</p></div>
-      <div class="card"><h3>Wild Safari</h3><p>Klik untuk bermain Wild Safari sekarang!</p></div>
+      <div class="card"><a href="game.html?game=zeus"><h3>Zeus</h3><p>Mainkan Zeus sekarang!</p></a></div>
+      <div class="card"><a href="game.html?game=candy"><h3>Candy Crush</h3><p>Mainkan Candy sekarang!</p></a></div>
+      <div class="card"><a href="game.html?game=panda"><h3>Panda Fortune</h3><p>Keberuntungan menanti!</p></a></div>
+      <div class="card"><a href="game.html?game=dragon"><h3>Dragon Gold</h3><p>Emas naga menunggu!</p></a></div>
+      <div class="card"><a href="game.html?game=spin"><h3>Lucky Spin</h3><p>Putar dan menang!</p></a></div>
+      <div class="card"><a href="game.html?game=safari"><h3>Wild Safari</h3><p>Jelajahi hutan liar!</p></a></div>
     </main>
-    <!-- Metode Deposit -->
-<section class="deposit-methods">
-  <h2 style="text-align: center; font-size: 1.5rem; margin-top: 2rem; font-weight: bold;">
-    Deposit VIA
-  </h2>
-  <div style="
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    padding: 1rem;
-  ">
-    <img src="DANA.jpeg" alt="DANA" style="height: 60px;" />
-    <img src="mandiri.png" alt="Mandiri" style="height: 60px;" />
-    <img src="BCA.jpeg" alt="BCA" style="height: 60px;" />
-    <img src="qris.png" alt="QRIS" style="height: 60px;" />
-  </div>
-</section>
 
+    <!-- Deposit VIA -->
+    <section class="deposit-methods">
+      <h2>Deposit VIA</h2>
+      <div>
+        <img src="DANA.jpeg" alt="DANA" />
+        <img src="mandiri.png" alt="Mandiri" />
+        <img src="BCA.jpeg" alt="BCA" />
+        <img src="qris.png" alt="QRIS" />
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 BAREX BACOR. All Rights Reserved.</p>
+      <p>Hubungi kami di: <a href="mailto:support@barexbacor.com" style="color: #93C5FD;">support@barexbacor.com</a></p>
+    </footer>
+  </div>
+
+  <!-- WhatsApp Live Chat -->
+  <div class="whatsapp-button">
+    <a href="https://wa.me/6281234567890" target="_blank">💬 Live Chat</a>
   </div>
 </body>
 </html>
